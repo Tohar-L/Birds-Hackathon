@@ -4,6 +4,7 @@ let birdBox = document.getElementById("answer__zone--selectBird");
 let resetButton = document.getElementById(`resetButton`);
 let question = document.getElementById("question__zone--Q");
 let startGame_button = document.querySelector("#start__Button");
+let lives = document.getElementById("question__zone--tries");
 let Bird_needed;
 // document.body.addEventListener("drop",()=>{
 //     let dragging_bird = document.querySelector(`.dragging_bird`);
@@ -24,15 +25,30 @@ let Bird_needed;
     }
 
 
-    const createNewBird = ()=>{
+    const createNewBird = (typeof_bird)=>{
+        // console.log(typeof_bird);
         if(birdBox.childElementCount<3)
         {
             let newBird = document.createElement("div");
-            newBird.classList.add(`answer__zone--Bird`);
+            newBird.classList.add(`answer__zone--Bird`,`${typeof_bird}`);
             newBird.setAttribute("draggable",`true`);
             newBird.addEventListener("dragstart",draggingOn);
             newBird.addEventListener("dragend",draggingOff);
-            birdBox.append(newBird);
+            
+            switch(typeof_bird)
+            {
+                case `purple`:
+                    birdBox.prepend(newBird);
+                break;
+                case `yellow`:
+                    birdBox.insertBefore(newBird,birdBox.lastElementChild)
+                break;
+                case `red`:                
+                    birdBox.append(newBird);
+                break;
+
+            }
+            // console.log(birdBox);
         }
         
     }
@@ -57,13 +73,12 @@ let Bird_needed;
             event.preventDefault();
             // console.log(event.target);
             if(event.target.childNodes.length<8){
-
+                
                 let draggingBird = document.querySelector(".dragging_bird");
                 draggingBird.classList.add("birdOnRope");
-                console.log
                 event.target.appendChild(draggingBird);
                 birdsOnRope__style(event);
-                createNewBird();
+                createNewBird(draggingBird.classList[1]);
                 // console.log(event.target.childNodes);
             }
             else{
@@ -94,8 +109,7 @@ let Bird_needed;
             
     }
 
-
-    resetButton.addEventListener("click",()=>{
+   const resetGame=()=>{
 
         for (let i=0;i<ropes.length;i++){
             while(ropes[i].firstChild)
@@ -103,11 +117,13 @@ let Bird_needed;
                 ropes[i].removeChild(ropes[i].firstChild);
             }
         }
-    })
+    }
+
+    resetButton.addEventListener("click",resetGame);
 
     const createFraction=()=>{
-        let numtop = Math.floor(Math.random()*30+1);
-        let numbottom = Math.floor(Math.random()*30+1);
+        let numtop = Math.floor(Math.random()*10+1);
+        let numbottom = Math.floor(Math.random()*10+1);
         while(numtop>numbottom){
             numtop = Math.floor(Math.random()*10+1);
             numbottom = Math.floor(Math.random()*10+1);
@@ -131,23 +147,39 @@ let Bird_needed;
     const didIGetIt =()=>{
         let sumOf_Birds_total=0;
         let sumOf_Birds_needed=0;
-        let sumOf_Birds_general=0;
+        let asnwer = fraction.textContent.split(`/`)
+
         for (let i =0;i<ropes.length;i++){
             sumOf_Birds_total+= ropes[i].childElementCount;
             for(let j=0;j<ropes[i].childNodes.length;j++)
             {
-                if(ropes[1].childNodes[0].classList[1]==Bird_needed)
+                if(ropes[i].childNodes[j].classList[1]==Bird_needed)
                 {
                     sumOf_Birds_needed++;
                 }
-                else{
-                    sumOf_Birds_general++;
-                }
             }
         }
-        console.log(sumOf_Birds_total,sumOf_Birds_needed,sumOf_Birds_general);
-    }
+        // console.log(sumOf_Birds_needed,sumOf_Birds_total);
+        // console.log(asnwer[0],asnwer[1]);
+        if(sumOf_Birds_needed==asnwer[0] && sumOf_Birds_total==asnwer[1])
+        {
+            console.log("yesssssssssssssss");
+        }
 
+        else{
+            console.log("nooo");
+            resetGame();
+            lives.removeChild(lives.lastElementChild);
+            if(lives.childElementCount==0){
+                let gameEnds = document.getElementsByClassName("end__Box");
+                
+                gameEnds.classList.add("gameEnds");
+            }
+        }
+    
+        // console.log(sumOf_Birds_total,sumOf_Birds_needed,sumOf_Birds_general);
+    }
+ 
 
 
 // }
