@@ -8,24 +8,32 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="our__navbar"></nav>
+   <!-- <div class="start__Box"> <button id="start__Button">Start</button></div> -->
+    <nav class="our__navbar">
+            <ul>
+                <li>Home</li>
+                <li>Eating Bears</li>
+                <li>Floating Fish</li>
+            </ul>
+            <button id="resetButton"></button>
+    </nav>
     <div id="answer__zone">
         <div class="answer__zone--trees"></div>
         <div id="answer__zone--ropes">
             <div class="answer__zone--rope">
-                <img>
+                <div id="answer__zone--rope1"></div>
             </div>
             <div class="answer__zone--rope">
-                <img>
+                <div id="answer__zone--rope2"></div>
             </div>
             <div class="answer__zone--rope">
-                <img>
+                <div id="answer__zone--rope3"></div>
             </div>
             <div id="answer__zone--birds">
-                <div class="answer__zone--selectBird">
-                    <div class="answer__zone--Bird"></div>
-                    <div class="answer__zone--Bird"></div>
-                    <div class="answer__zone--Bird"></div>
+                <div id="answer__zone--selectBird">
+                    <div class="answer__zone--Bird purple" draggable="true"></div>
+                    <div class="answer__zone--Bird yellow" draggable="true"></div>
+                    <div class="answer__zone--Bird red" draggable="true"></div>
                 </div>
             </div>
         </div>
@@ -36,17 +44,23 @@
 
     <div id="question__zone">
         <div class="question__zone--Left">
-            <div id="question__zone--tries"></div>
-            <button id="question__zone--done"></button>
+            <div id="question__zone--tries">
+                <img src="..//Pictures/Birds-Lives.png">
+                <img src="..//Pictures/Birds-Lives.png">
+                <img src="..//Pictures/Birds-Lives.png">
+            </div>
+            <div class="question__zone--done">
+                <button id="question__zone--done">Did I get it?</button>
+            </div>
         </div>
         <div class="question__zone--right">
-            <p id="question__zone--Q"></p>
+            <p id="question__zone--Q"> 
+            </p>
         </div>
 
     </div>
 
-
-
+    
     <script  src="./Birds-on-a-wire.js""></script>
 </body>
 </html>
