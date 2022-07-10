@@ -225,6 +225,6 @@ startGame_button.addEventListener("click",gameLoading);
 restartGame_button.addEventListener("click",resetGame);
 
 home_button.addEventListener("click",homePage);
-
+// gameLoading();
 // console.log(draggingBird);
 
