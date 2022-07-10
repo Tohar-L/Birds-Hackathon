@@ -247,6 +247,7 @@ body{
    
 }
 #resetButton{
+    
     cursor: pointer;
 }
 
@@ -587,4 +588,147 @@ body{
         height: 95%;
         background-size: 100% 100%;
     }
+}
+
+
+/* Bear Eating */
+.our__navbar--Bears{
+    background-image: url(../Pictures/Bears-Eating/Bears-Eating-Forest-extn.png);
+    background-size: 100% 100%;
+}
+#resetButton{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+#game__zone{
+    height: 95%;
+    background-image: url(../Pictures/Bears-Eating/Bears-Eating-Forest.png);
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.bears{
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.bear__box--outer{
+    width: 30%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.bear__box--inner{
+    width: 40%;
+    height: 20%;
+    margin-top: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.75em;
+}
+
+#mama_Bear> .bear__box--inner{
+    margin-right: 4em;
+}
+#papa_Bear{
+    background-image: url(../Pictures/Bears-Eating/Papa-Bear.png);
+    background-size: 100% 100%;
+}
+#mama_Bear{
+    background-image: url(../Pictures/Bears-Eating/Mama-Bear.png);
+    background-size: 100% 100%;
+}
+.bear__select{
+    width: 80%;
+    height: 50%;
+    text-align: center;
+    background-color: beige;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}
+.bears__operation{
+    width: 10%;
+    margin-bottom: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bears__operation>input{
+    margin: 1.5em;
+}
+.bears__operation>label{
+    border-radius: 10%;
+    background-color: rgba(34, 131, 164, 0.588);
+    font-size: 3em;
+    border: none;
+    box-shadow: 0 0 3px 3px lightblue;
+    color: lightblue;
+    width: 50%;
+    text-align: center;
+
+}
+
+
+
+.bears__Equal{
+    width: 10%;
+    height: 43%;
+}
+
+#bears__Equal_Button{
+    width: 80%;
+    height: 35%;
+    background-color: rgba(34, 131, 164, 0.588);
+    font-size: 1em;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 0 0 3px 3px lightblue;
+    color: lightblue;
+}
+#bears__Answer{
+    width: 20%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+    
+}
+#bears__Answer--icon{
+    /* background-image: url(../Pictures/Bears-Eating/Bear-X-icon.png); */
+    background-size: 100% 100%;
+    width: 40%;
+    height: 30%;
+}
+
+
+.bears__Question--zone{
+    width: 50%;
+    margin: auto;
+    height: 30%;
+    background-color: rgba(34, 131, 164, 0.588);
+    box-shadow: 0 0 3px 3px lightblue;
+    color: lightblue;
+    padding: 1em 3em;
+}
+
+#bears__Question{
+    padding-top: 1.5em;
+    font-size: 2em;
+    max-width: 100%;
+    margin: auto;
+    
 }
