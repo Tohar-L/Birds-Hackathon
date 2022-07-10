@@ -91,7 +91,7 @@ body{
 .aboutUs_info_Parahgraph{
     font-family: 'Source Code Pro', monospace;
     max-width: 450px;
-
+    font-size: 1.4em;
     margin: auto;
 }
 .About-me__bg-img{
@@ -595,11 +595,6 @@ body{
 .our__navbar--Bears{
     background-image: url(../Pictures/Bears-Eating/Bears-Eating-Forest-extn.png);
     background-size: 100% 100%;
-}
-#resetButton{
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
 }
 #game__zone{
     height: 95%;
