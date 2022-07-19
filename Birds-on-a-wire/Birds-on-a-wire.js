@@ -128,10 +128,13 @@ const gameLoading=()=>{
 
 
 
+    // the code should always be wrapped in a function
+    // donc have a for loop in the middle of the page
     for (let b of  birds){
             b.addEventListener("dragstart",draggingOn);
             b.addEventListener("dragend",draggingOff);
     }
+    
     for (let r of ropes){
             r.addEventListener("dragover",(event)=>{
                 event.preventDefault();

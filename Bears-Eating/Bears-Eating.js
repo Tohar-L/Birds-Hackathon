@@ -31,7 +31,9 @@ const didIGetIt=()=>{
 
 }
 
-
+// the if statement is repetitive, 
+// you could have all the common variables and program outside the if statement
+// and set variable that will be modified in the if statement 
 const createOptions= ()=>{
     if(rand==1){
         let option1 = document.createElement(`option`);
